@@ -5,23 +5,18 @@
   .inner-container {
     padding-top: 40px;
     justify-content: flex-end;
- @include media("L") {
-padding: 40px 30px;
-justify-content: space-between;
-}
-@include media("M"){
-  justify-content: space-between;
-}
+    @include media("L") {
+      padding: 40px 30px;
+      justify-content: space-between;
+    }
+    @include media("M") {
+      justify-content: space-between;
+    }
   }
-}
-.logo{
-  width: 161px;
-  height: 40px;
-  margin-right: 368px;
-  background-color: $main-color;
-  @include media("L"){
-    width: 115px;
-margin-right: 100px;
+  @media screen and (min-width: 1200px) {
+    .logo {
+      margin-right: 368px;
+    }
   }
 }
 .burgermenu {
@@ -32,9 +27,9 @@ margin-right: 100px;
   @include media("M") {
     display: block;
   }
-  &__svg{
-  width: 30px;
-  height: 30px;
+  &__svg {
+    width: 30px;
+    height: 30px;
   }
 }
 .header-list {
@@ -43,7 +38,7 @@ margin-right: 100px;
   &__link {
     color: $main-color;
   }
-  @include media ("L"){
+  @include media("L") {
     width: 500px;
   }
   @include media("M") {

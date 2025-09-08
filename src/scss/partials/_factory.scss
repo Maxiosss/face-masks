@@ -4,11 +4,6 @@
 
 .factory {
   margin: 77px 0 80px;
-  .inner-container{
-    @media screen and (min-width: 1200px) {
-      align-items: normal;
-    }
-  }
   &-img-wrapper {
     position: relative;
   }
@@ -121,7 +116,7 @@
     background-color: $secondary-color;
   }
   &__item--accent {
-    padding: 45px 40px 49px 38px;
+    padding: 45px 40px 40px 38px;
     background-color: $accent-color;
     @include media("M") {
       text-align: center;

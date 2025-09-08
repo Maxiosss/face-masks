@@ -1,7 +1,7 @@
 @use "../utils/mixins" as *;
 @use "../utils/variables" as *;
 @use "../utils/placeholders" as *;
-.mobile-menu.is-hidden{
+.mobile-menu.is-hidden {
   display: none;
 }
 .mobile-menu {
@@ -45,6 +45,12 @@
   padding: 0 28px;
   &__btn {
     display: block;
+    &:hover {
+      color: $accent-color;
+    }
+    &:focus {
+      color: $accent-color;
+    }
   }
   &__link {
     color: $title-color;

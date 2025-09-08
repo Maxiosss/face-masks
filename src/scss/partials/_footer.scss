@@ -3,7 +3,13 @@
 @use "../utils/placeholders" as *;
 .footer {
   background-color: $bg-color;
-  min-width: 320px
+  min-width: 320px;
+  .logo{
+  margin-bottom: 40px;
+  @include media("L"){
+    margin: 0 auto 40px;
+  }
+}
 }
 .footer__text {
   @include width(318px);
@@ -35,7 +41,7 @@
   }
   &-text-wrapper {
     display: flex;
-    gap: 15px;
+    gap: 10px;
     margin-left: 14px;
     flex-direction: column;
   }
@@ -113,6 +119,7 @@
   }
 }
 .footer-rights-wrapper {
+  border-top: 0.3px solid #C4C4C4;
   background-color: $bg-color;
   padding: 39px 0 0;
   text-align: center;
