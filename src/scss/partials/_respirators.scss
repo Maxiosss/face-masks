@@ -1,0 +1,62 @@
+@use "../utils/mixins" as *;
+@use "../utils/variables" as *;
+@use "../utils/placeholders" as *;
+.respirators-list {
+  @include flex;
+  row-gap: 80px;
+  flex-direction: column;
+  &__item {
+    @include flex;
+    gap: 47px;
+    @include media("M") {
+      flex-direction: column;
+    }
+  }
+  &__item--2 {
+    @include media("M") {
+      flex-direction: column-reverse;
+    }
+  }
+  &__title {
+    @extend %title;
+    margin-bottom: 25px;
+    line-height: 1.04;
+    @include media("L") {
+      font-size: 34px;
+    }
+    @include media("M") {
+      text-align: center;
+    }
+  }
+  &__text {
+    @include width(523px);
+    line-height: 1.87;
+    @include media("M") {
+      text-align: center;
+    }
+  }
+  &-span {
+    font-weight: 700;
+  }
+  &-text-block{
+    @include flex(center);
+    flex-direction: column
+  }
+  &-img-wrapper {
+    @include width(571px);
+    min-width: 250px;
+    @include media("M") {
+      display: none;
+    }
+  }
+  &-img-wrapper--adaptive {
+    display: none;
+    @include media("M") {
+      display: block;
+      margin: 30px 0;
+    }
+  }
+  &__img--medical-worker {
+    border-radius: 15px 15px 15px 0;
+  }
+}

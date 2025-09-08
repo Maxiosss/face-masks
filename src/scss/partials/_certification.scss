@@ -1,0 +1,40 @@
+@use "../utils/mixins" as *;
+@use "../utils/variables" as *;
+@use "../utils/placeholders" as *;
+.certification {
+  .inner-container {
+    @include flex(center);
+    @include media("M"){
+      flex-direction: column;
+      row-gap: 15px;
+    }
+  }
+  &__title {
+    font-size: 15px;
+    align-self: center;
+  }
+  &__line {
+    margin-left: 16px;
+    margin-right: 87px;
+    align-self: center;
+    width: 147px;
+    height: 1px;
+    background-color: $accent-color;
+    border: 1px solid $accent-color;
+    @include media("M") {
+      margin: 25px auto;
+    }
+  }
+}
+.certification-list {
+  @include flex;
+  @include width(500px);
+  @include media ("M") {
+    flex-direction: column;
+    row-gap: 25px;
+    margin: 0 auto;
+  }
+  &-img-wrapper {
+    @include width(127px);
+  }
+}

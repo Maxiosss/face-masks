@@ -1,0 +1,55 @@
+@use "../utils/mixins" as *;
+@use "../utils/variables" as *;
+@use "../utils/placeholders" as *;
+.mobile-menu.is-hidden{
+  display: none;
+}
+.mobile-menu {
+  @include flex(center);
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  height: 100vh;
+  background-color: $bg-color;
+  padding: 0 30px;
+  overflow: auto;
+}
+
+.burger-close {
+  width: 28px;
+  height: 28px;
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  @include flex;
+  &__svg {
+    width: 12px;
+    height: 12px;
+    @include media("M") {
+      width: 13px;
+      height: 13px;
+    }
+    &:hover {
+      fill: $secondary-color;
+    }
+  }
+}
+
+.menu-list {
+  @include flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 0 28px;
+  &__btn {
+    display: block;
+  }
+  &__link {
+    color: $title-color;
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+}

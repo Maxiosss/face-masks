@@ -1,0 +1,117 @@
+@use "../utils/mixins" as *;
+@use "../utils/variables" as *;
+@use "../utils/placeholders" as *;
+.hero {
+  margin-top: 80px;
+  margin-bottom: 133px;
+  @include media("M") {
+    margin-top: 0;
+  }
+  &__subtitle {
+    color: $accent-color;
+    font-family: $title-font;
+    font-weight: 500;
+    font-size: 14px;
+    @include media("M") {
+      text-align: center;
+    }
+  }
+  &__title {
+    @extend %title;
+    @include width(555px);
+    font-size: 72px;
+    line-height: 1.14;
+    @include media("M") {
+      text-align: center;
+      font-size: 48px;
+    }
+  }
+  &__text {
+    @include width(555px);
+    margin-top: 10px;
+    margin-bottom: 24px;
+    line-height: 1.5;
+    @include media("M") {
+      margin: 0 auto;
+      text-align: center;
+      max-width: 300px;
+    }
+  }
+  &-img-wrapper {
+    @include width(496px);
+    margin-left: 96px;
+    min-width: 200px;
+    @include media("M") {
+      margin: 30px auto;
+    }
+  }
+  &-container-positioner {
+    @include flex;
+    @include media("M") {
+      flex-direction: column;
+    }
+  }
+  &-text-block {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  .link {
+    @include link;
+  }
+  .link-wrapper {
+    @include linkWrapper;
+  }
+}
+
+.hero-button-list {
+  @include flex;
+  @include width(270px);
+  @include media("M") {
+    margin: 0 auto;
+    display: none;
+  }
+}
+.hero-button-list--adaptive {
+  display: none;
+  @include media("M") {
+    display: flex;
+  }
+}
+.hero-list {
+  @include flex;
+  @include width(1141px);
+  margin-top: 72px;
+  @include media("L") {
+    @include width(750px);
+    row-gap: 40px;
+    flex-wrap: wrap;
+    margin: 72px auto 0;
+  }
+  @include media("M") {
+    text-align: center;
+    @include width(270px);
+  }
+  &-positioner {
+    display: flex;
+    text-align: left;
+  }
+  &__icon {
+    width: 40px;
+    height: 40px;
+  }
+  &__title {
+    @extend %title;
+    @include width(210px);
+    font-weight: 500;
+    font-family: $main-font;
+    font-size: 20px;
+    line-height: 1.4;
+    margin-left: 20px;
+    margin-bottom: 15px;
+  }
+  &__text {
+    @include width(210px);
+    line-height: 1.47;
+  }
+}

@@ -1,0 +1,29 @@
+@use "../utils/mixins" as *;
+@use "../utils/variables" as *;
+@use "../utils/placeholders" as *;
+
+.shop {
+  @include flex(center);
+  flex-direction: column;
+  margin: 113px auto 120px;
+  @include width(750px);
+  .inner-container {
+    flex-direction: column;
+  }
+  &__title {
+    @extend %title;
+    line-height: 1.04;
+    text-align: center;
+  }
+  &__text {
+    margin-top: 40px;
+    margin-bottom: 35px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.87;
+  }
+  &__button {
+    @include width(115px);
+    margin: 0 auto;
+  }
+}

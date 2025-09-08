@@ -1,0 +1,42 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+%btn {
+  padding: 18px 24px;
+  font-size: 14px;
+  border-radius: 8px;
+  font-weight: 500;
+  background-color: $secondary-color;
+  color: $btn-color-text;
+  border: none;
+  transition: all 0.3s;
+  &:hover,
+  &:focus {
+    box-shadow: 2px 2px 3px grey;
+  }
+}
+%title {
+  font-family: $title-font;
+  font-weight: 700;
+  font-size: 48px;
+  color: $title-color;
+  line-height: 104%;
+  @include media("L") {
+    font-size: 34px;
+  }
+}
+%dynamic-padding {
+  padding: 0 30px;
+@include media("S") {
+  padding: 0 15px;
+}
+  @media (min-width: 1200px) and (max-width: 1920px) {
+    padding-left: calc(30px + (390 - 30) * ((100vw - 1200px) / (1920 - 1200)));
+    padding-right: calc(30px + (390 - 30) * ((100vw - 1200px) / (1920 - 1200)));
+  }
+
+  @media (min-width: 1920px) {
+    padding-left: 390px;
+    padding-right: 390px;
+  }
+}

@@ -1,0 +1,40 @@
+@use "../utils/variables" as *;
+@mixin flex($justify: space-between, $align: center) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+@mixin link($color: $accent-color, $fsize: 14px, $fweight: 500) {
+  color: $color;
+  font-size: $fsize;
+  font-weight: $fweight;
+}
+@mixin linkWrapper(
+  $bcolor: $accent-color,
+  $max-width: 125px,
+  $padding: 14px 24px
+) {
+  max-width: 130px;
+  padding: $padding;
+  border: 1px solid $bcolor;
+  border-radius: 8px;
+}
+@mixin media($breakpoint) {
+  @if $breakpoint == "S" {
+    @media (max-width: 480px) {
+      @content;
+    }
+  } @else if $breakpoint == "M" {
+    @media (max-width: 768px) {
+      @content;
+    }
+  } @else if $breakpoint == "L" {
+    @media (max-width: 1200px) {
+      @content;
+    }
+  }
+}
+@mixin width($mwidth, $width: 100%) {
+  max-width: $mwidth;
+  width: $width;
+}

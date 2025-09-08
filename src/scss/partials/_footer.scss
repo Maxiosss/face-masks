@@ -1,0 +1,123 @@
+@use "../utils/mixins" as *;
+@use "../utils/variables" as *;
+@use "../utils/placeholders" as *;
+.footer {
+  background-color: $bg-color;
+  min-width: 320px
+}
+.footer__text {
+  @include width(318px);
+    @include media("M"){
+    text-align: center;
+  }
+}
+.footer-contact-list {
+  @include flex;
+  padding: 40px 30px;
+  @include width(1141px);
+  margin: 0 auto;
+  @include media("M") {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 10px;
+  }
+    @media screen and (max-width: 391px) {
+      max-width: 277px;
+    justify-content: flex-start;
+    margin: 0 auto;
+  }
+  &-bg {
+    background-color: $accent-color;
+  }
+  &__item {
+    @include flex;
+  }
+  &-text-wrapper {
+    display: flex;
+    gap: 15px;
+    margin-left: 14px;
+    flex-direction: column;
+  }
+  &__title {
+    @extend %title;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+  &__text {
+    line-height: 1.33;
+    font-size: 15px;
+    color: $title-color;
+  }
+  &-icon {
+    width: 32px;
+    height: 32px;
+  }
+  &__svg {
+    fill: $secondary-color;
+  }
+}
+.bottom-footer {
+  @include flex;
+  @include width(1140px);
+  padding: 72px 30px 60px;
+  margin: 0 auto;
+  @include media("M") {
+    flex-direction: column;
+  }
+}
+.footer-company-lists-wrapper {
+  display: contents;
+  @include media("M") {
+    margin-top: 40px;
+    @include flex;
+    @include width(300px);
+  }
+}
+.footer-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  &__titles {
+    @extend %title;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 24px;
+  }
+  &__link {
+    color: $main-color;
+  }
+}
+.footer-social-media-list {
+  margin-left: 14px;
+  &-progress-bar {
+    width: 22px;
+    height: 129px;
+    background: linear-gradient(
+      $bg-color 0%,
+      $bg-color 8.5%,
+      lightblue 8.5%,
+      lightblue 38%,
+      $secondary-color 38%,
+      $secondary-color 85%,
+      #0149ae 85%,
+      #0149ae 100%
+    );
+  }
+  &-wrapper {
+    display: flex;
+    @include width(108px);
+    flex-wrap: wrap;
+    margin-left: 16px;
+  }
+}
+.footer-rights-wrapper {
+  background-color: $bg-color;
+  padding: 39px 0 0;
+  text-align: center;
+}
+.footer-rights-icon {
+  width: 20px;
+  height: 20px;
+}

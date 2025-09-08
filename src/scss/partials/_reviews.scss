@@ -1,0 +1,79 @@
+@use "../utils/mixins" as *;
+@use "../utils/variables" as *;
+@use "../utils/placeholders" as *;
+.reviews {
+  .inner-container {
+    @include media("M") {
+      flex-wrap: wrap;
+      @include width(708px);
+    }
+  }
+}
+.reviews-list {
+  @include flex($align: normal);
+  @include width(1138px);
+  gap: 10px;
+  @media screen and (max-width: 980px) {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+  @include media("M") {
+    max-width: 500px;
+    flex-wrap: wrap;
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 50px;
+    @include width(358px);
+    background-color: #fff;
+    @include media("L") {
+      padding: 40px 20px;
+      max-width: 220px;
+      margin: 0 auto;
+    }
+  }
+  &-icons-wrapper {
+    @include flex;
+  }
+  &-stars-wrapper {
+    display: flex;
+    width: 75px;
+    height: 15px;
+
+    fill: $accent-color;
+  }
+  &-social-icon {
+    width: 30px;
+    height: 30px;
+    fill: $main-color;
+  }
+  &__text {
+    color: $title-color;
+    font-size: 16px;
+    margin-top: 40px;
+  }
+  &-person-name {
+    font-size: 16px;
+    font-weight: 500;
+    color: $title-color;
+    text-transform: uppercase;
+  }
+  &-person-specialization {
+    font-weight: 300;
+  }
+  &-img-wrapper {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: $main-color;
+  }
+  &-person-text-wrapper {
+    margin-left: 10px;
+  }
+  &-person-details-wrapper {
+    display: flex;
+    margin-top: 20px;
+  }
+}

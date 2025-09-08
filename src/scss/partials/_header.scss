@@ -1,0 +1,52 @@
+@use "../utils/mixins" as *;
+@use "../utils/variables" as *;
+
+.header {
+  .inner-container {
+    padding-top: 40px;
+    justify-content: flex-end;
+ @include media("L") {
+padding: 40px 30px;
+justify-content: space-between;
+}
+@include media("M"){
+  justify-content: space-between;
+}
+  }
+}
+.logo{
+  width: 161px;
+  height: 40px;
+  margin-right: 368px;
+  background-color: $main-color;
+  @include media("L"){
+    width: 115px;
+margin-right: 100px;
+  }
+}
+.burgermenu {
+  display: none;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  @include media("M") {
+    display: block;
+  }
+  &__svg{
+  width: 30px;
+  height: 30px;
+  }
+}
+.header-list {
+  width: 610px;
+  @include flex;
+  &__link {
+    color: $main-color;
+  }
+  @include media ("L"){
+    width: 500px;
+  }
+  @include media("M") {
+    display: none;
+  }
+}

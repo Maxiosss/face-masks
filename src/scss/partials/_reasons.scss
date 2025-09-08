@@ -1,0 +1,134 @@
+@use "../utils/mixins" as *;
+@use "../utils/variables" as *;
+@use "../utils/placeholders" as *;
+
+.reasons {
+  margin: 80px auto;
+
+  .inner-container {
+    @include flex(center);
+    align-items: flex-start;
+    @include media("M") {
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+  }
+
+  &-img-wrapper {
+    @include width(401px);
+    @include media("L") {
+      max-width: 250px;
+    }
+    @media screen and (max-width: 865px) {
+      max-width: 150px;
+    }
+    @include media("M") {
+      max-width: 70%;
+    }
+  }
+
+  &-right-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-left: 87px;
+    gap: 35px;
+    @include media("L") {
+      margin-left: calc(2% + 15px);
+    }
+  }
+
+  &-main-text-wrapper {
+    @include width(640px);
+    @include media("L") {
+      max-width: 100%;
+    }
+    @include media("M") {
+      text-align: center;
+    }
+  }
+
+  &__title {
+    @extend %title;
+    @include width(653px);
+    line-height: 1.04;
+    margin-bottom: 32px;
+@include media("M") {
+      display: none;
+    }
+  }
+  &__title--adaptive {
+    display: none;
+    text-align: center;
+    @include media("M") {
+      display: block;
+    }
+  }
+  &__text {
+    font-size: 16px;
+    line-height: 1.87;
+    @include width(635px);
+  }
+}
+
+.reasons-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  @include width(650px);
+  @include media("M") {
+    justify-content: center;
+  }
+
+  &__item {
+    display: flex;
+    @include width(311px);
+    @media screen and (max-width: 1080px) {
+      max-width: 250px;
+    }
+  }
+
+  &-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-left: 17px;
+    @include media("M") {
+      text-align: center;
+    }
+  }
+
+  &__title {
+    @extend %title;
+    @include width(238px);
+    line-height: 1.4;
+    margin-bottom: 15px;
+    font-size: 20px;
+     @include media("M") {
+      text-align: center;
+    }
+  }
+
+  &__text {
+    font-size: 15px;
+    line-height: 1.47;
+    @include width(238px);
+  }
+
+  &-icon-wrapper {
+    background-color: $secondary-color;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    padding: 14px;
+  }
+
+  &-icon {
+    width: 28px;
+    height: 24px;
+  }
+
+  &__svg {
+    fill: $btn-color-text;
+  }
+}

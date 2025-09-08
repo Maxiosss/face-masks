@@ -1,0 +1,26 @@
+// ======================================
+// 1. Utilities
+// ======================================
+@use "utils/variables" as *;
+@use "utils/mixins" as *;   
+@use "utils/placeholders" as *;
+
+// ======================================
+// 2. Base styles
+// ======================================
+@use "base/reset" as *;  
+@use "base/base" as *;
+
+// ======================================
+// 3. Sections
+// ======================================
+@use "partials/header" as *;
+@use "partials/footer" as *;
+@use "partials/hero" as *;
+@use "partials/factory" as *;
+@use "partials/reasons" as *;
+@use "partials/respirators" as *;
+@use "partials/reviews" as *;
+@use "partials/shop" as *;
+@use "partials/certification" as *;
+@use "partials/burgermenu" as *;
