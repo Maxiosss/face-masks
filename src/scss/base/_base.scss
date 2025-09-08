@@ -9,6 +9,45 @@ html {
   font-family: $main-font;
   font-size: 16px;
 }
+.header {
+  position: relative;
+}
+.respirators {
+  position: relative;
+}
+.corner-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  max-width: 927px;
+  width: 100%;
+  height: 891px;
+  background: url("../images/bg.jpg") no-repeat;
+  background-color: rgba(230, 230, 230, 0.99);
+  background-blend-mode: overlay;
+  background-size: cover;
+  z-index: -10;
+  pointer-events: none;
+  border-bottom-left-radius: 25%;
+  @include media("L") {
+    max-width: 650px;
+  }
+  @include media("M") {
+    max-width: 400px;
+  }
+}
+body {
+  background: linear-gradient(
+    $bg-color 0%,
+    $bg-color 22%,
+    #fff 22%,
+    #fff 53%,
+    $bg-color 53%,
+    $bg-color 81%,
+    #fff 81%,
+    #fff 100%
+  );
+}
 a:hover {
   color: $secondary-color;
 }
@@ -22,26 +61,26 @@ img {
 }
 .btn {
   @extend %btn;
-  &:hover{
+  &:hover {
     color: $accent-color;
   }
-  &:focus{
+  &:focus {
     color: $accent-color;
   }
 }
 .title {
   @extend %title;
 }
-.logo{
+.logo {
   width: 161px;
   height: 40px;
-  background-color: #C4C4C4;
-  @include media("L"){
+  background-color: #c4c4c4;
+  @include media("L") {
     width: 115px;
-margin-right: 100px;
+    margin-right: 100px;
   }
 }
-.logo__img{
+.logo__img {
   width: 161px;
   height: 40px;
 }
@@ -50,11 +89,15 @@ margin-right: 100px;
   margin: 0 auto;
   min-width: 320px;
   @extend %dynamic-padding;
+    position: relative;
+  background-image: url("../images/back-arrows.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
 .inner-container {
   max-width: 1141px;
   width: 100%;
   margin: 0 auto;
   @include flex(center);
-  ;
 }
