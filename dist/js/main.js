@@ -1,0 +1,1 @@
+const openMenuBtn=document.querySelector(".menu-open"),closeMenuBtn=document.querySelector(".burger-close"),menu=document.querySelector(".mobile-menu");openMenuBtn.addEventListener("click",()=>{menu.classList.remove("is-hidden")}),closeMenuBtn.addEventListener("click",()=>{menu.classList.add("is-hidden")});
