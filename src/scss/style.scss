@@ -1,18 +1,11 @@
 // ======================================
-// 1. Utilities
+// 1. Base styles
 // ======================================
-@use "utils/variables" as *;
-@use "utils/mixins" as *;   
-@use "utils/placeholders" as *;
+@use "./base/reset" as *;  
+@use "./base/base" as *;
 
 // ======================================
-// 2. Base styles
-// ======================================
-@use "base/reset" as *;  
-@use "base/base" as *;
-
-// ======================================
-// 3. Sections
+// 2. Sections
 // ======================================
 @use "partials/header" as *;
 @use "partials/footer" as *;

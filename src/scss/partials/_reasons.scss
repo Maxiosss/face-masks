@@ -35,7 +35,10 @@
     margin-left: 87px;
     gap: 35px;
     @include media("L") {
-      margin-left: 0;
+      margin-left: clamp(10px, 4vw, 45px)
+    }
+    @include media("M"){
+      margin-left: 0
     }
   }
 
